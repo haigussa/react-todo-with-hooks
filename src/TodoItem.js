@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { TodoContext } from './contexts/TodoContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons'
 
 const TodoItem = ({ todo, id }) => {
     const { deleteTodo, editTodo } = useContext(TodoContext)
@@ -36,8 +38,11 @@ const TodoItem = ({ todo, id }) => {
                     {todo}
                 </div>
                 <div>
-                    <button onClick={handleIsEditing}>Edit</button>
-                    <button onClick={handleDelete}>Delete</button>
+                    {/* <button onClick={handleIsEditing}>Edit</button>
+                    <button onClick={handleDelete}>Delete</button> */}
+                    <FontAwesomeIcon icon={faPen} onClick={handleIsEditing} className="faIcons editIcon"/>
+                    <FontAwesomeIcon icon={faTrash} onClick={handleDelete} className="faIcons deleteIcon"/>
+
                 </div>
             </li>
         ) : (

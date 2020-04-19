@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const StyledTodoList = styled.div`
 max-width: 750px;
 margin: auto;
-background-color: #222831;
 ul{
     background-color: #222831;
     margin: 1rem auto;
@@ -22,7 +21,7 @@ ul{
         .todoTaskContainer{
             width: 75%;
         }
-        button{
+        .faIcons{
             padding: 10px;
             margin: auto 10px;
             border-radius: 5px;

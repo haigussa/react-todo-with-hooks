@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import TodoList from './TodoList';
 import TodoListContextProvider from './contexts/TodoContext'
 import AddTodoForm from './AddTodoForm';
