@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { TodoContext } from './contexts/TodoContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons'
+import StyledTodoItem, { StyledTodoItemForm } from './styles/StyledTodoItem'
 
 const TodoItem = ({ todo, id }) => {
     const { deleteTodo, editTodo } = useContext(TodoContext)
@@ -33,24 +34,23 @@ const TodoItem = ({ todo, id }) => {
 
     return (
         !isEditing ? (
-            <li>
+            <StyledTodoItem>
                 <div className="todoTaskContainer">
                     {todo}
                 </div>
-                <div>
-                    {/* <button onClick={handleIsEditing}>Edit</button>
-                    <button onClick={handleDelete}>Delete</button> */}
-                    <FontAwesomeIcon icon={faPen} onClick={handleIsEditing} className="faIcons editIcon"/>
-                    <FontAwesomeIcon icon={faTrash} onClick={handleDelete} className="faIcons deleteIcon"/>
-
+                <div className="iconContainer">
+                    <FontAwesomeIcon icon={faPen} onClick={handleIsEditing} className="faIcons editIcon" />
+                    <FontAwesomeIcon icon={faTrash} onClick={handleDelete} className="faIcons deleteIcon" />
                 </div>
-            </li>
+            </StyledTodoItem>
         ) : (
-                <form onSubmit={handleSubmit}>
+                <StyledTodoItemForm onSubmit={handleSubmit}>
                     <input type="text" value={editText} onChange={handleChange} required />
-                    <button type="submit" >Save</button>
-                    <button onClick={handleCancel}>Cancel</button>
-                </form>
+                    <div className="edit-btn">
+                        <button id="save-btn" type="submit" >Save</button>
+                        <button id="cancel-btn" onClick={handleCancel}>Cancel</button>
+                    </div>
+                </StyledTodoItemForm>
             )
     )
 }

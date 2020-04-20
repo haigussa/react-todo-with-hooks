@@ -1,11 +1,14 @@
 import styled from 'styled-components'
  
 const StyledApp = styled.div`
-text-align: center;
-background-color: #222831;
-max-width: 980px;
-margin: 3rem auto;
-padding: 2rem;
-`
+background-color: #FF6666;
+max-width: 750px;
+margin: 2rem auto;
+padding: 1rem 0;
+h1{
+    text-align: center;
+    color:white;
+}
 
+`
 export default StyledApp;

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { TodoContext } from './contexts/TodoContext'
+import StyledAddTodoForm from './styles/StyledAddTodoForm'
 
 const AddTodoForm = () => {
     const { addTodo } = useContext(TodoContext)
@@ -13,11 +14,11 @@ const AddTodoForm = () => {
         setTodo("")
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" onChange={handleChange} value={todo} required placeholder="Add New Task"/>
-            <input type="submit" value="Add" />
-        </form>
+        <StyledAddTodoForm onSubmit={handleSubmit}>
+            <input id="inputText" type="text" onChange={handleChange} value={todo} required placeholder="Add New Task" />
+            <input id="inputButton" type="submit" value="Add" />
+        </StyledAddTodoForm>
     )
-}   
+}
 
 export default AddTodoForm

@@ -9,6 +9,7 @@ function App() {
     <StyledApp>
       <TodoListContextProvider>
         <div className="App">
+          <h1>Todo App</h1>
           <AddTodoForm />
           <TodoList />
         </div>
