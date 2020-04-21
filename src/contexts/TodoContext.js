@@ -1,16 +1,27 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import { v4 } from 'uuid'
 
 export const TodoContext = createContext()
 
 const TodoContextProvider = (props) => {
 
-    const [todos, setTodos] = useState([
-        { id: 1, todoText: "Learn Coding", isEditing: false },
-        { id: 2, todoText: "Study JavaScript", isEditing: false },
-        { id: 3, todoText: "Master Hooks", isEditing: false },
-        { id: 4, todoText: "Have Fun", isEditing: false }
-    ])
+    const [localTodos] = useState(localStorage.getItem('todos'))
+    const [todos, setTodos] = useState(
+
+        localTodos ? JSON.parse(localTodos) :
+            [
+                //Dummy Data for Testing
+                // { id: 1, todoText: "Learn Coding", isEditing: false },
+                // { id: 2, todoText: "Study JavaScript", isEditing: false },
+                // { id: 3, todoText: "Master Hooks", isEditing: false },
+                // { id: 4, todoText: "Have Fun", isEditing: false }
+            ]
+    )
+
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos))
+
+    }, [todos])
 
     const addTodo = (todoText) => {
         setTodos([
@@ -20,7 +31,6 @@ const TodoContextProvider = (props) => {
     }
 
     const editTodo = (id, editedTodo) => {
-
         const updatedTodo = todos.map(todo => {
             if (todo.id === id) {
                 return { ...todo, todoText: editedTodo }

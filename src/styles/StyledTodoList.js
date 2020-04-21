@@ -9,6 +9,13 @@ ul{
     max-width: 750px;
     box-sizing: border-box;
     margin: 0;
+    p{
+        color:white;
+        text-align: center;
+        font-size:1.3rem;
+        margin: 2rem;
+}
+    }
 }
 h3{
     color:white;
