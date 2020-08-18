@@ -15,7 +15,7 @@ const AddTodoForm = () => {
     }
     return (
         <StyledAddTodoForm onSubmit={handleSubmit}>
-            <input id="inputText" type="text" onChange={handleChange} value={todo} required placeholder="Add New Task" />
+            <input id="inputText" type="text" onChange={handleChange} value={todo} required placeholder="Add a new task..." />
             <input id="inputButton" type="submit" value="Add" />
         </StyledAddTodoForm>
     )

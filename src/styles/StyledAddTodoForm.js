@@ -18,6 +18,7 @@ width: 100%;
     font-size:1.3rem;
     font-weight: bold;
     transition: all ease .5s;
+    border:1px solid white;
     &:hover{
         cursor: pointer;
         background-color: #cc5151;

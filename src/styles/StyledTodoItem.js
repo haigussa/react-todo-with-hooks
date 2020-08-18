@@ -43,6 +43,7 @@ input{
     outline: none;
     width: 65%;
     border-radius: 5px;
+    margin-left:5px;
 }
 .edit-btn{
     width: 30%;
@@ -53,9 +54,10 @@ input{
         transition: all ease 0.3s;
         background:rgba(0,0,0,0.1);
         width: 100%;
-        margin-left: 3%;
+        margin: 0 3%;
         color: white;
         font-size: 1.1rem;
+        border:none;
         border-radius: 5px;
         &:hover{
             cursor: pointer;
